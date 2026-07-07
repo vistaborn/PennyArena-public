@@ -1,0 +1,29 @@
+{
+  "0x0000000000000000000000000000000000000001": {
+    "walletAddress": "0x0000000000000000000000000000000000000001",
+    "username": "pennyarena",
+    "bio": "Official PennyArena account — micropayment content arena on Arc testnet. Vote on posts for $0.001 USDC.",
+    "avatarDataUrl": null,
+    "email": null,
+    "emailVerified": false,
+    "isOfficial": true,
+    "referralCode": "pennyofficial",
+    "referredBy": null,
+    "points": 1000,
+    "pendingWinningsUsdc": 0,
+    "stats": {
+      "posts": 60,
+      "duelWins": 0,
+      "duelLosses": 0,
+      "tipsReceivedUsdc": 0,
+      "tipsSentUsdc": 0,
+      "votesCast": 0,
+      "referrals": 0
+    },
+    "sessions": [],
+    "pendingEmailCode": null,
+    "pendingEmailExpires": null,
+    "createdAt": "2026-07-05T16:00:00.000Z",
+    "updatedAt": "2026-07-06T10:54:11.233Z"
+  }
+}

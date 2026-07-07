@@ -1,0 +1,40 @@
+{
+  "name": "penny-arena",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Micropayment content arena on Arc testnet — PennyArena",
+  "scripts": {
+    "dev": "next dev",
+    "dev:host": "next dev -H 0.0.0.0",
+    "dev:https": "next dev -H 0.0.0.0 --experimental-https",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "register-entity": "node scripts/register-entity-secret.mjs",
+    "extract-sprites": "node scripts/extract-pixel-sprites.mjs",
+    "optimize-brand": "node scripts/optimize-brand-svg.mjs"
+  },
+  "dependencies": {
+    "@circle-fin/modular-wallets-core": "^1.0.13",
+    "@upstash/redis": "^1.38.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.468.0",
+    "next": "^15.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-qr-code": "^2.0.21",
+    "tailwind-merge": "^2.6.0",
+    "viem": "^2.46.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.16.0",
+    "eslint-config-next": "^15.1.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16",
+    "typescript": "^5.7.2"
+  }
+}

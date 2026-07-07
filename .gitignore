@@ -1,0 +1,16 @@
+node_modules/
+.next/
+.env
+.env.local
+.env.*.local
+!.env.example
+data/
+public/uploads/*
+!public/uploads/.gitkeep
+*.log
+.DS_Store
+.vercel
+tsconfig.tsbuildinfo
+recovery/
+.cursor/
+.cursor-dev-verified

@@ -1,0 +1,344 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #004445;
+  --card: #003a3b;
+  --heading: #fff8f0;
+  --fg: #f2ebe3;
+  --muted: #9ec5c6;
+  --accent: #f79d28;
+  --border: rgba(255, 248, 240, 0.14);
+  --gold: #f79d28;
+  --coral: #ff8f72;
+  --mint: #7ee8d8;
+}
+
+html.light {
+  --bg: #e8f4f4;
+  --card: #ffffff;
+  --heading: #003032;
+  --fg: #1a4a4b;
+  --muted: #4d7a7b;
+  --accent: #f79d28;
+  --border: rgba(0, 68, 69, 0.12);
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  min-height: 100vh;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--heading);
+}
+
+.text-display {
+  font-size: clamp(2.25rem, 5.5vw, 3.75rem);
+  line-height: 1;
+}
+
+.text-subtitle {
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+@media (min-width: 768px) {
+  .text-subtitle {
+    font-size: 0.9375rem;
+  }
+}
+
+.text-section-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.card {
+  @apply min-w-0 rounded-2xl border bg-[var(--card)] p-5;
+  border-color: var(--border);
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-1.5 rounded-xl px-4 py-2.5 text-center text-sm font-semibold leading-none shadow-sm transition hover:brightness-110 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50;
+  background-color: #f79d28;
+  color: #000000 !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  color: #000000 !important;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-1.5 rounded-xl border border-[var(--border)] bg-white/[0.03] px-4 py-2.5 text-center text-sm font-medium leading-none text-[var(--fg)] transition hover:border-penny-gold/35 hover:bg-white/[0.06] active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50;
+}
+
+.btn-ghost {
+  @apply inline-flex items-center justify-center gap-1.5 rounded-xl px-3 py-2 text-sm font-medium text-[var(--muted)] transition hover:bg-white/5 hover:text-[var(--fg)];
+}
+
+.btn-action {
+  @apply inline-flex items-center justify-center gap-1.5 rounded-xl border border-[var(--border)] bg-white/[0.02] px-3 py-1.5 text-center text-sm font-medium leading-none text-[var(--fg)] transition hover:border-penny-gold/30 hover:bg-white/[0.05] active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50;
+}
+
+.site-header-bar {
+  background-color: color-mix(in srgb, var(--bg) 82%, transparent);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  backdrop-filter: blur(14px) saturate(1.2);
+}
+
+.site-mobile-nav {
+  background-color: var(--bg);
+}
+
+.site-mobile-nav-inner {
+  @apply mx-auto flex w-full max-w-[min(100%,88rem)] items-stretch px-1 py-2;
+}
+
+.mobile-nav-link {
+  @apply flex min-w-0 flex-1 flex-col items-center justify-end gap-1 px-0.5 py-0.5;
+}
+
+.mobile-nav-icon {
+  @apply flex h-5 w-5 shrink-0 items-center justify-center;
+}
+
+.mobile-nav-label {
+  @apply max-w-full truncate text-center text-[10px] font-medium leading-none;
+}
+
+.btn-header {
+  @apply inline-flex h-9 min-h-9 items-center justify-center gap-1.5 px-3 text-sm leading-none;
+}
+
+.btn-header > svg,
+.btn-header > span,
+.btn-header-label {
+  @apply self-center leading-none;
+}
+
+.btn-header-label {
+  @apply truncate;
+}
+
+.btn-icon-lg {
+  @apply inline-flex h-[3.5rem] w-[3.5rem] min-h-[3.5rem] items-center justify-center p-0 leading-none;
+}
+
+.btn-action-active {
+  @apply border-penny-gold/40 bg-penny-gold/10 text-penny-gold;
+}
+
+.btn-action-success {
+  animation: action-pop 0.45s ease-out;
+}
+
+@keyframes action-pop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.06); box-shadow: 0 0 0 4px rgba(61, 214, 168, 0.25); }
+  100% { transform: scale(1); }
+}
+
+.toast-stack {
+  @apply fixed bottom-20 right-4 z-[100] flex max-w-sm flex-col gap-2 md:bottom-6;
+}
+
+.toast {
+  @apply flex items-start gap-2.5 rounded-xl border bg-[var(--card)] p-3 shadow-lg backdrop-blur;
+  border-color: var(--border);
+  animation: toast-in 0.25s ease-out;
+}
+
+.toast-success {
+  border-color: rgba(61, 214, 168, 0.35);
+}
+
+.toast-error {
+  border-color: rgba(255, 107, 74, 0.4);
+}
+
+.toast-dismiss {
+  @apply shrink-0 rounded-lg p-1 text-[var(--muted)] transition hover:bg-white/5 hover:text-[var(--fg)];
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(8px) translateX(8px); }
+  to { opacity: 1; transform: translateY(0) translateX(0); }
+}
+
+.compose-prompt {
+  @apply block rounded-2xl border border-[var(--border)] bg-gradient-to-br from-white/[0.04] to-transparent px-5 py-4 text-base text-[var(--muted)] transition hover:border-penny-gold/35 hover:text-[var(--fg)];
+}
+
+.input {
+  @apply w-full rounded-xl border bg-[var(--card)] px-4 py-2 text-[var(--fg)] outline-none focus:ring-2 focus:ring-penny-gold/40;
+  border-color: var(--border);
+  color-scheme: dark;
+}
+
+select.input option {
+  background-color: var(--card);
+  color: var(--fg);
+}
+
+.profile-stat {
+  @apply flex flex-col items-center justify-center rounded-xl border bg-white/[0.02] px-3 py-4 text-center;
+  border-color: var(--border);
+}
+
+.profile-stat-value {
+  @apply text-2xl font-bold leading-none text-penny-mint;
+}
+
+.profile-stat-label {
+  @apply mt-1.5 text-xs text-[var(--muted)];
+}
+
+.wallet-stat-tile {
+  @apply flex min-h-[5.5rem] flex-col justify-center rounded-xl border border-[var(--border)] bg-white/5 p-4 text-left;
+}
+
+.profile-tab {
+  @apply border-b-2 border-transparent px-4 py-2.5 text-sm font-medium text-[var(--muted)] transition hover:text-[var(--fg)];
+}
+
+.profile-tab-active {
+  @apply border-penny-mint text-penny-mint;
+}
+
+@keyframes mascot-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes mascot-shake {
+  0%,
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(2px) rotate(-2deg);
+  }
+  75% {
+    transform: translateX(-2px) rotate(2deg);
+  }
+}
+
+.mascot-idle {
+  animation: mascot-bob 2.4s ease-in-out infinite;
+}
+
+.mascot-idle-delay {
+  animation-delay: 0.35s;
+}
+
+.mascot-shake {
+  animation: mascot-shake 0.12s linear infinite;
+}
+
+.mascot-shake-reverse {
+  animation: mascot-shake 0.12s linear infinite reverse;
+}
+
+.search-cat-stage {
+  @apply relative mx-auto flex h-44 max-w-lg items-end justify-center overflow-hidden sm:h-52;
+}
+
+.search-cat-body {
+  position: relative;
+  animation: search-cat-wander 7s ease-in-out infinite;
+}
+
+.search-cat-sprite {
+  image-rendering: pixelated;
+  animation: search-cat-levitate 2.8s ease-in-out infinite;
+}
+
+.search-cat-glass {
+  @apply absolute -right-2 top-0 flex h-12 w-12 items-center justify-center rounded-full border border-penny-gold/40 shadow-md backdrop-blur-sm;
+  background-color: color-mix(in srgb, var(--bg) 80%, transparent);
+  animation: search-cat-glass 3.2s ease-in-out infinite;
+}
+
+.search-bar {
+  @apply relative;
+}
+
+.search-bar-field {
+  @apply w-full resize-none overflow-hidden border bg-[var(--card)] text-left text-base text-[var(--fg)] outline-none focus:ring-2 focus:ring-penny-gold/40;
+  min-height: 3.25rem;
+  max-height: 14rem;
+  padding: calc(0.875rem - 2px) 3.25rem calc(0.875rem + 2px) 1.25rem;
+  line-height: 1.5;
+  border-radius: var(--search-field-radius, 9999px);
+  border-color: var(--border);
+  color-scheme: dark;
+  transition:
+    border-radius 0.35s ease-in-out,
+    height 0.25s ease;
+}
+
+.search-bar-field-expanded {
+  /* Progressive radius is set inline; class anchors icon position only. */
+}
+
+.search-bar-icon {
+  @apply absolute right-4 flex items-center justify-center rounded-full p-1 text-[var(--muted)] transition-colors hover:text-penny-gold;
+  top: calc(50% - 2px);
+  transform: translateY(-50%);
+  transition:
+    top 0.35s ease-in-out,
+    transform 0.35s ease-in-out,
+    color 0.15s ease;
+}
+
+.search-bar-expanded .search-bar-icon {
+  top: 1.125rem;
+  transform: none;
+}
+
+@keyframes search-cat-wander {
+  0%,
+  100% {
+    transform: translateX(-28px);
+  }
+  50% {
+    transform: translateX(28px);
+  }
+}
+
+@keyframes search-cat-levitate {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes search-cat-glass {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(-8deg);
+  }
+  33% {
+    transform: translate(6px, -14px) rotate(12deg);
+  }
+  66% {
+    transform: translate(-4px, -8px) rotate(-4deg);
+  }
+}
